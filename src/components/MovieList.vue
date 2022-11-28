@@ -37,13 +37,12 @@ export default {
       @click="updateActiveIndex(index)"
     >
       <div>
-        <img
-          class="rounded mr-3"
-          alt="avatar1"
-          :src="movie.posterUrl"
-          style="width: 70px"
-        />
-        <strong>{{ movie.name }} ({{ movie.year }})</strong>
+        <img class="rounded mr-3" :src="movie.posterUrl" style="width: 70px" />
+        <div style="display: inline-block; vertical-align: middle">
+          <strong>{{ movie.name }} ({{ movie.year }})</strong>
+          <p>{{ movie.country }}</p>
+          <span class="badge badge-warning">{{ movie.rating }}</span>
+        </div>
       </div>
     </li>
   </ul>

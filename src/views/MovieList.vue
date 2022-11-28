@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-5">
       <div class="col">
         <InputSearch v-model="searchText" />
       </div>
@@ -11,11 +11,11 @@
           <i class="fa fa-film"></i>
         </h4>
 
-        <div class="justify-content-around align-items-center mb-3">
+        <!-- <div class="justify-content-around align-items-center mb-3">
           <button class="btn btn-sm btn-primary" @click="refreshList()">
             <i class="fas fa-redo"></i> Refresh
           </button>
-        </div>
+        </div> -->
 
         <MovieList
           v-if="filteredMoviesCount > 0"
@@ -26,23 +26,23 @@
       </div>
     </div>
 
-    <div class="mt-3 col-md-6">
-      <!-- <div v-if="activeMovie">
-        <ContactCard :movie="activeMovie" />
-      </div> -->
+    <div class="col-md-7">
+      <div v-if="activeMovie">
+        <MovieCard :movie="activeMovie" />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-// import MovieCard from "@/components/MovieCard.vue";
+import MovieCard from "@/components/MovieCard.vue";
 import InputSearch from "@/components/InputSearch.vue";
 import MovieList from "@/components/MovieList.vue";
 import MovieService from "@/services/movie.service";
 
 export default {
   components: {
-    // MovieCard,
+    MovieCard,
     InputSearch,
     MovieList,
   },

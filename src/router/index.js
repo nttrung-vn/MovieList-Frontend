@@ -7,6 +7,11 @@ const routes = [
     name: "movielist",
     component: MovieList,
   },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "notfound",
+    component: () => import("@/views/NotFound.vue"),
+  },
 ];
 
 const router = createRouter({
